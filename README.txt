@@ -1,8 +1,8 @@
-# House Price Prediction - Streamlit
+#House Price Prediction - Streamlit
 
 This project converts the regression model from the supplied Lab 1 notebook into a Streamlit application.
 
-## Files
+##Files
 
 - `app.py` - Streamlit application. It trains the Multiple Linear Regression model when the app starts, so NO `.pkl` file is required.
 - `boston_housing.csv` - REQUIRED dataset. Put your existing CSV in this folder.
@@ -37,7 +37,7 @@ This project converts the regression model from the supplied Lab 1 notebook into
 
 8. Streamlit will open the application in your browser.
 
-## Important
+##Important
 
 The CSV must contain a column named `MEDV`. The model uses every other column as a predictor, matching the original notebook.
 
