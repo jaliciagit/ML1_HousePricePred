@@ -1,44 +1,126 @@
-# House Price Prediction 
+# House Price Prediction using Linear Regression
 
-This project converts the regression model from the supplied Lab 1 notebook into a Streamlit application.
+## Project Overview
 
-## Files
+This project is a Machine Learning application that predicts house prices using **Multiple Linear Regression**.
 
-- `app.py` - Streamlit application. It trains the Multiple Linear Regression model when the app starts, so NO `.pkl` file is required.
-- `boston_housing.csv` - REQUIRED dataset. Put your existing CSV in this folder.
-- `requirements.txt` - Python packages required.
-- `Alicia_2648525_Lab1.ipynb` - Your original lab notebook.
+The model is trained using the Boston Housing dataset. Different characteristics of a house and its surrounding area are used as input features to predict the median value of the house.
 
-## Run in VS Code
+The trained model is integrated with a **Streamlit web application**, allowing users to enter property details and receive a predicted house price through a simple interface.
 
-1. Open this folder in VS Code.
-2. Make sure `boston_housing.csv` is in the same folder as `app.py`.
-3. Open the VS Code terminal.
-4. Create a virtual environment (recommended):
+---
 
-   Windows:
-   `python -m venv .venv`
+## Objectives
 
-5. Activate it:
+- Understand the workflow of a regression-based Machine Learning project.
+- Perform data exploration and preprocessing.
+- Train a Multiple Linear Regression model.
+- Evaluate the model using regression metrics.
+- Build a simple interactive web application using Streamlit.
+- Deploy the Machine Learning workflow in a user-friendly interface.
 
-   PowerShell:
-   `.venv\Scripts\Activate.ps1`
+---
 
-   Command Prompt:
-   `.venv\Scripts\activate`
+## Technologies Used
 
-6. Install packages:
+- **Python**
+- **Pandas** – Data manipulation and analysis
+- **NumPy** – Numerical computations
+- **Scikit-learn** – Machine Learning model and evaluation
+- **Matplotlib** – Data visualization
+- **Seaborn** – Data visualization
+- **SciPy** – Statistical analysis
+- **Streamlit** – Web application
 
-   `pip install -r requirements.txt`
+---
 
-7. Start Streamlit:
+## Machine Learning Model
 
-   `streamlit run app.py`
+The project uses **Multiple Linear Regression**.
 
-8. Streamlit will open the application in your browser.
+The model uses all columns except `MEDV` as input features.
 
-##Important
+### Target Variable
 
-The CSV must contain a column named `MEDV`. The model uses every other column as a predictor, matching the original notebook.
+`MEDV` – Median value of owner-occupied homes.
 
-No model `.pkl` file is included because the Streamlit app trains the Linear Regression model directly from the CSV when it starts.
+### Input Features
+
+The dataset contains the following features:
+
+| Feature | Description |
+|---|---|
+| CRIM | Per capita crime rate |
+| ZN | Proportion of residential land |
+| INDUS | Proportion of non-retail business areas |
+| CHAS | Charles River dummy variable |
+| NOX | Nitric oxide concentration |
+| RM | Average number of rooms |
+| AGE | Proportion of older buildings |
+| DIS | Distance to employment centres |
+| RAD | Accessibility to radial highways |
+| TAX | Property tax rate |
+| PTRATIO | Pupil-teacher ratio |
+| B | Proportion related to the population measure |
+| LSTAT | Percentage of lower-status population |
+
+---
+
+## Project Workflow
+
+The project follows these main steps:
+
+1. Load the dataset.
+2. Explore the dataset.
+3. Check for missing values and duplicates.
+4. Perform descriptive statistical analysis.
+5. Analyse correlations between variables.
+6. Visualize important relationships.
+7. Separate features and target variable.
+8. Split the dataset into training and testing sets.
+9. Standardize the input features.
+10. Train the Multiple Linear Regression model.
+11. Generate predictions.
+12. Evaluate model performance.
+13. Perform residual and statistical analysis.
+14. Integrate the model into a Streamlit application.
+
+---
+
+## Model Evaluation
+
+The regression model is evaluated using:
+
+- **MAE (Mean Absolute Error)**
+- **MSE (Mean Squared Error)**
+- **RMSE (Root Mean Squared Error)**
+- **R² Score**
+- **Adjusted R² Score**
+
+These metrics are used to understand how accurately the model predicts house prices.
+
+---
+
+## Streamlit Application
+
+The Streamlit application provides an interactive interface where users can enter the values of the house features.
+
+After entering the required values, the application uses the Linear Regression model to generate a predicted house price.
+
+The application trains the model directly from `boston_housing.csv` when it starts.
+
+Therefore, a separate `.pkl` model file is not required.
+
+---
+
+## Project Structure
+
+```text
+ML1_HousePricePred/
+│
+├── app.py
+├── boston_housing.csv
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── .venv/
